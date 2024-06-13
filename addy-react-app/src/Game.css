@@ -12,6 +12,10 @@ body {
     justify-content: center;
 }
 
+h1 {
+    text-align: center;
+}
+
 table {
     color: #191919;
     border-collapse: collapse;
