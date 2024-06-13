@@ -89,7 +89,7 @@ const Game = () => {
 					<img src={`${process.env.PUBLIC_URL}/${playerMove}.png`} alt="player move" className="emoji" />
 				</div>
 			</div>
-			<p className="result">{result}</p>
+			<p className="result">{result || "\u00A0"}</p>
 			<Scoreboard score={score} />
 			<div className="controls">
 				<button onClick={newGame} className="new-game">New Game</button>
