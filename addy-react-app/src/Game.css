@@ -1,0 +1,46 @@
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.moves {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+}
+
+.computer, .player {
+    text-align: center;
+}
+
+.emoji {
+    width: 50px;
+    height: 50px;
+}
+
+.result {
+    margin: 20px 0;
+}
+
+.controls {
+    margin: 20px 0;
+}
+
+.new-game, .auto-play {
+    width: 200px;
+    font-size: 18px;
+    font-weight: bolder;
+    padding: 8px 16px;
+    background-color: orange;
+    color: white;
+    border: 2px solid white;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    cursor: pointer;
+}
+
+.auto-play {
+    margin: 0 0 0 30px;
+}
