@@ -17,8 +17,8 @@ const Game = () => {
 	
 	const playGame = (playerMove) => {
 		const computerMove = pickComputerMove();
-		setPlayerMove(playerMove);
-		setComputerMove(computerMove);
+		setPlayerMove(`${playerMove}-emoji`);
+		setComputerMove(`${computerMove}-emoji`);
 		
 		let result = '';
 		if (computerMove === playerMove) {
@@ -81,12 +81,12 @@ const Game = () => {
 			<div className="moves">
 				<div className="computer">
 					<p>Computer</p>
-					<img src={`${computerMove}.png`} alt="computer move" className="emoji" />
+					<img src={`${process.env.PUBLIC_URL}/${computerMove}.png`} alt="computer move" className="emoji" />
 				</div>
 				<div className="vs"><img src="vs-emoji.png" alt="vs" className="emoji" /></div>
 				<div className="player">
 					<p>You</p>
-					<img src={`${playerMove}.png`} alt="player move" className="emoji" />
+					<img src={`${process.env.PUBLIC_URL}/${playerMove}.png`} alt="player move" className="emoji" />
 				</div>
 			</div>
 			<p className="result">{result}</p>
