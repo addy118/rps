@@ -6,8 +6,8 @@ import './Game.css';
 const Game = () => {
 	const [score, setScore] = useState(JSON.parse(localStorage.getItem('ls-score')) || { wins: 0, losses: 0, ties: 0 });
 	const [result, setResult] = useState('');
-	const [computerMove, setComputerMove] = useState('');
-	const [playerMove, setPlayerMove] = useState('');
+	const [computerMove, setComputerMove] = useState('tleft-emoji');
+	const [playerMove, setPlayerMove] = useState('tright-emoji');
 	const [isAutoPlaying, setIsAutoPlaying] = useState(false);
 	const [intervalId, setIntervalId] = useState(null);
 	
@@ -48,8 +48,8 @@ const Game = () => {
 		setScore({ wins: 0, losses: 0, ties: 0 });
 		localStorage.removeItem('ls-score');
 		setResult('');
-		setComputerMove('');
-		setPlayerMove('');
+		setComputerMove('tleft-emoji');
+		setPlayerMove('tright-emoji');
 		if (isAutoPlaying) {
 			setIsAutoPlaying(false);
 			clearInterval(intervalId);
@@ -72,7 +72,7 @@ const Game = () => {
 	};
 	
 	return (
-		<div>
+		<div className="game-container">
 			<div className="button-container">
 				<Button onClick={() => playGame('rock')} emoji="rock-emoji.png" alt="rock" />
 				<Button onClick={() => playGame('paper')} emoji="paper-emoji.png" alt="paper" />
@@ -81,19 +81,19 @@ const Game = () => {
 			<div className="moves">
 				<div className="computer">
 					<p>Computer</p>
-					{computerMove && <img src={`${computerMove}-emoji.png`} alt={computerMove} className="emoji" />}
+					<img src={`${computerMove}.png`} alt="computer move" className="emoji" />
 				</div>
 				<div className="vs"><img src="vs-emoji.png" alt="vs" className="emoji" /></div>
 				<div className="player">
 					<p>You</p>
-					{playerMove && <img src={`${playerMove}-emoji.png`} alt={playerMove} className="emoji" />}
+					<img src={`${playerMove}.png`} alt="player move" className="emoji" />
 				</div>
 			</div>
 			<p className="result">{result}</p>
 			<Scoreboard score={score} />
 			<div className="controls">
-				<button className="new-game" onClick={newGame}>New Game</button>
-				<button className="auto-play" onClick={autoPlay}>{isAutoPlaying ? 'Stop Play' : 'Auto Play'}</button>
+				<button onClick={newGame} className="new-game">New Game</button>
+				<button onClick={autoPlay} className="auto-play">{isAutoPlaying ? 'Stop Play' : 'Auto Play'}</button>
 			</div>
 		</div>
 	);
