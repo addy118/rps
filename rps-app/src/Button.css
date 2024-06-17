@@ -1,0 +1,12 @@
+.move-button {
+    width: 100px;
+    height: 100px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 2px solid whitesmoke;
+    border-radius: 50px;
+    margin: 0 14px;
+    cursor: pointer;
+}
